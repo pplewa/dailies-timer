@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001233F0001 /* DailiesTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002233F0001 /* DailiesTimerApp.swift */; };
+		A1000003233F0001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004233F0001 /* ContentView.swift */; };
+		A1000005233F0001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000006233F0001 /* Assets.xcassets */; };
+		A1000007233F0001 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008233F0001 /* TimerModel.swift */; };
+		A1000009233F0001 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000A233F0001 /* TimerManager.swift */; };
+		A100000B233F0001 /* TimerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000C233F0001 /* TimerListView.swift */; };
+		A100000D233F0001 /* FullScreenTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100000E233F0001 /* FullScreenTimerView.swift */; };
+		A100000F233F0001 /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010233F0001 /* AddTimerView.swift */; };
+		A1000011233F0001 /* TimerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012233F0001 /* TimerRowView.swift */; };
+		A1000013233F0001 /* GoogleSheetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000014233F0001 /* GoogleSheetsService.swift */; };
+		A1000015233F0001 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000016233F0001 /* Extensions.swift */; };
+		A1000017233F0001 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1000018233F0001 /* WidgetKit.framework */; };
+		A1000019233F0001 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A100001A233F0001 /* SwiftUI.framework */; };
+		A100001B233F0001 /* TimerWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001C233F0001 /* TimerWidgetBundle.swift */; };
+		A100001D233F0001 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001E233F0001 /* TimerWidget.swift */; };
+		A100001F233F0001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000020233F0001 /* Assets.xcassets */; };
+		A1000021233F0001 /* TimerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A1000022233F0001 /* TimerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A1000023233F0001 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008233F0001 /* TimerModel.swift */; };
+		A1000024233F0001 /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000025233F0001 /* SharedDefaults.swift */; };
+		A1000026233F0001 /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000025233F0001 /* SharedDefaults.swift */; };
+		A1000050233F0001 /* TimerActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000051233F0001 /* TimerActivityAttributes.swift */; };
+		A1000052233F0001 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000053233F0001 /* LiveActivityManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1000027233F0001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1000028233F0001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1000029233F0001;
+			remoteInfo = TimerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A100002A233F0001 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1000021233F0001 /* TimerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A1000002233F0001 /* DailiesTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesTimerApp.swift; sourceTree = "<group>"; };
+		A1000004233F0001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A1000006233F0001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1000008233F0001 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		A100000A233F0001 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		A100000C233F0001 /* TimerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListView.swift; sourceTree = "<group>"; };
+		A100000E233F0001 /* FullScreenTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenTimerView.swift; sourceTree = "<group>"; };
+		A1000010233F0001 /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
+		A1000012233F0001 /* TimerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRowView.swift; sourceTree = "<group>"; };
+		A1000014233F0001 /* GoogleSheetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSheetsService.swift; sourceTree = "<group>"; };
+		A1000016233F0001 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A1000018233F0001 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A100001A233F0001 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A100001C233F0001 /* TimerWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidgetBundle.swift; sourceTree = "<group>"; };
+		A100001E233F0001 /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
+		A1000020233F0001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A1000022233F0001 /* TimerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1000025233F0001 /* SharedDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaults.swift; sourceTree = "<group>"; };
+		A100002B233F0001 /* DailiesTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailiesTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A100002C233F0001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A100002D233F0001 /* DailiesTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DailiesTimer.entitlements; sourceTree = "<group>"; };
+		A100002E233F0001 /* TimerWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TimerWidgetExtension.entitlements; sourceTree = "<group>"; };
+		A1000051233F0001 /* TimerActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerActivityAttributes.swift; sourceTree = "<group>"; };
+		A1000053233F0001 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A100002F233F0001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000030233F0001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000019233F0001 /* SwiftUI.framework in Frameworks */,
+				A1000017233F0001 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A1000031233F0001 = {
+			isa = PBXGroup;
+			children = (
+				A1000032233F0001 /* DailiesTimer */,
+				A1000033233F0001 /* TimerWidgetExtension */,
+				A1000034233F0001 /* Shared */,
+				A1000035233F0001 /* Frameworks */,
+				A1000036233F0001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A1000032233F0001 /* DailiesTimer */ = {
+			isa = PBXGroup;
+			children = (
+				A1000002233F0001 /* DailiesTimerApp.swift */,
+				A1000004233F0001 /* ContentView.swift */,
+				A1000037233F0001 /* Models */,
+				A1000038233F0001 /* Views */,
+				A1000039233F0001 /* Services */,
+				A100003A233F0001 /* Utilities */,
+				A1000006233F0001 /* Assets.xcassets */,
+				A100002C233F0001 /* Info.plist */,
+				A100002D233F0001 /* DailiesTimer.entitlements */,
+			);
+			path = DailiesTimer;
+			sourceTree = "<group>";
+		};
+		A1000033233F0001 /* TimerWidgetExtension */ = {
+			isa = PBXGroup;
+			children = (
+				A100001C233F0001 /* TimerWidgetBundle.swift */,
+				A100001E233F0001 /* TimerWidget.swift */,
+				A1000020233F0001 /* Assets.xcassets */,
+				A100002E233F0001 /* TimerWidgetExtension.entitlements */,
+			);
+			path = TimerWidgetExtension;
+			sourceTree = "<group>";
+		};
+		A1000034233F0001 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A1000025233F0001 /* SharedDefaults.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A1000035233F0001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1000018233F0001 /* WidgetKit.framework */,
+				A100001A233F0001 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1000036233F0001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A100002B233F0001 /* DailiesTimer.app */,
+				A1000022233F0001 /* TimerWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A1000037233F0001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1000008233F0001 /* TimerModel.swift */,
+				A1000051233F0001 /* TimerActivityAttributes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A1000038233F0001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A100000C233F0001 /* TimerListView.swift */,
+				A100000E233F0001 /* FullScreenTimerView.swift */,
+				A1000010233F0001 /* AddTimerView.swift */,
+				A1000012233F0001 /* TimerRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A1000039233F0001 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A100000A233F0001 /* TimerManager.swift */,
+				A1000014233F0001 /* GoogleSheetsService.swift */,
+				A1000053233F0001 /* LiveActivityManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A100003A233F0001 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A1000016233F0001 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A1000029233F0001 /* TimerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000040233F0001 /* Build configuration list for PBXNativeTarget "TimerWidgetExtension" */;
+			buildPhases = (
+				A1000041233F0001 /* Sources */,
+				A1000030233F0001 /* Frameworks */,
+				A1000042233F0001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TimerWidgetExtension;
+			productName = TimerWidgetExtension;
+			productReference = A1000022233F0001 /* TimerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A100003B233F0001 /* DailiesTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A100003C233F0001 /* Build configuration list for PBXNativeTarget "DailiesTimer" */;
+			buildPhases = (
+				A100003D233F0001 /* Sources */,
+				A100002F233F0001 /* Frameworks */,
+				A100003E233F0001 /* Resources */,
+				A100002A233F0001 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A100003F233F0001 /* PBXTargetDependency */,
+			);
+			name = DailiesTimer;
+			productName = DailiesTimer;
+			productReference = A100002B233F0001 /* DailiesTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A1000028233F0001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A1000029233F0001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					A100003B233F0001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A1000043233F0001 /* Build configuration list for PBXProject "DailiesTimer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A1000031233F0001;
+			productRefGroup = A1000036233F0001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A100003B233F0001 /* DailiesTimer */,
+				A1000029233F0001 /* TimerWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A100003E233F0001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000005233F0001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000042233F0001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100001F233F0001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A100003D233F0001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001233F0001 /* DailiesTimerApp.swift in Sources */,
+				A1000003233F0001 /* ContentView.swift in Sources */,
+				A1000007233F0001 /* TimerModel.swift in Sources */,
+				A1000050233F0001 /* TimerActivityAttributes.swift in Sources */,
+				A1000009233F0001 /* TimerManager.swift in Sources */,
+				A1000052233F0001 /* LiveActivityManager.swift in Sources */,
+				A100000B233F0001 /* TimerListView.swift in Sources */,
+				A100000D233F0001 /* FullScreenTimerView.swift in Sources */,
+				A100000F233F0001 /* AddTimerView.swift in Sources */,
+				A1000011233F0001 /* TimerRowView.swift in Sources */,
+				A1000013233F0001 /* GoogleSheetsService.swift in Sources */,
+				A1000015233F0001 /* Extensions.swift in Sources */,
+				A1000026233F0001 /* SharedDefaults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1000041233F0001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A100001B233F0001 /* TimerWidgetBundle.swift in Sources */,
+				A100001D233F0001 /* TimerWidget.swift in Sources */,
+				A1000023233F0001 /* TimerModel.swift in Sources */,
+				A1000024233F0001 /* SharedDefaults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A100003F233F0001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1000029233F0001 /* TimerWidgetExtension */;
+			targetProxy = A1000027233F0001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A1000044233F0001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A1000045233F0001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A1000046233F0001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailiesTimer/DailiesTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 52P634CMC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailiesTimer/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dailies.timer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1000047233F0001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DailiesTimer/DailiesTimer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 52P634CMC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailiesTimer/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dailies.timer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A1000048233F0001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimerWidgetExtension/TimerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 52P634CMC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimerWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dailies.timer.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1000049233F0001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TimerWidgetExtension/TimerWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 52P634CMC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimerWidgetExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dailies.timer.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A100003C233F0001 /* Build configuration list for PBXNativeTarget "DailiesTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000046233F0001 /* Debug */,
+				A1000047233F0001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000040233F0001 /* Build configuration list for PBXNativeTarget "TimerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000048233F0001 /* Debug */,
+				A1000049233F0001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1000043233F0001 /* Build configuration list for PBXProject "DailiesTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000044233F0001 /* Debug */,
+				A1000045233F0001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A1000028233F0001 /* Project object */;
+}
