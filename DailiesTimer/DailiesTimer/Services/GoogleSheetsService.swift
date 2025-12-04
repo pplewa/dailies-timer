@@ -462,6 +462,7 @@ class GoogleSheetsService: ObservableObject {
         let remoteTimers = try await fetchTimersInternal()
         
         // Step 2: Merge - take higher elapsed time values, but respect explicit resets
+        // Local timers list is authoritative for which timers exist (deleted timers stay deleted)
         var mergedTimers = localTimers
         var hasRemoteUpdates = false
         let recentResetThreshold: TimeInterval = 10.0 // Ignore remote if reset within 10 seconds
@@ -489,12 +490,9 @@ class GoogleSheetsService: ObservableObject {
                     mergedTimers[localIndex].elapsedTime = remoteElapsed
                     hasRemoteUpdates = true
                 }
-            } else {
-                // Timer exists only on remote - add it locally
-                print("GoogleSheetsService: Adding timer '\(remoteTimer.name)' from remote")
-                mergedTimers.append(remoteTimer)
-                hasRemoteUpdates = true
             }
+            // Timer exists only on remote - do NOT add it back
+            // Local is authoritative for which timers exist (if user deleted it locally, it stays deleted)
         }
         
         // Step 3: Push merged data back to sheet

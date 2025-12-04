@@ -195,11 +195,9 @@ class TimerManager: ObservableObject {
                     timers[localIndex].elapsedTime = remoteTimer.elapsedTime
                     hasChanges = true
                 }
-            } else {
-                // New timer from remote
-                timers.append(remoteTimer)
-                hasChanges = true
             }
+            // Do NOT add remote-only timers - local is authoritative for which timers exist
+            // If a timer was deleted locally, it should stay deleted
         }
         
         if hasChanges {
