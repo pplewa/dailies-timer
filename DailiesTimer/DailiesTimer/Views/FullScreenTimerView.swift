@@ -196,10 +196,12 @@ struct FullScreenTimerView: View {
                     .animation(.linear(duration: 0.1), value: currentTimer.progress)
             }
             
-            // Timer text
-            VStack(spacing: 8) {
+            // Timer text - constrained to fit inside circle
+            VStack(spacing: 6) {
                 Text(currentTimer.currentElapsedTime.formattedTimerWithMillis)
-                    .font(.system(size: 56, weight: .bold, design: .monospaced))
+                    .font(.system(size: timerFontSize, weight: .bold, design: .monospaced))
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(1)
                     .foregroundStyle(
                         LinearGradient(
                             colors: [Color.appText, Color.appText.opacity(0.8)],
@@ -209,41 +211,58 @@ struct FullScreenTimerView: View {
                     )
                     .shimmer(isActive: currentTimer.isRunning)
                 
-                if currentTimer.isRunning {
-                    HStack(spacing: 6) {
-                        Circle()
-                            .fill(Color.appSuccess)
-                            .frame(width: 8, height: 8)
-                            .glowEffect(color: .appSuccess, radius: 6)
-                        
-                        Text("RUNNING")
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundColor(.appSuccess)
-                            .tracking(2)
-                    }
-                } else if isActive {
-                    Text("PAUSED")
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .foregroundColor(.appWarning)
-                        .tracking(2)
-                } else {
-                    Text("STOPPED")
-                        .font(.caption)
-                        .fontWeight(.bold)
-                        .foregroundColor(.appTextSecondary)
-                        .tracking(2)
-                }
+                statusBadge
                 
                 if timer.referenceDuration > 0 {
                     let percentage = Int(min(currentTimer.progress * 100, 999))
                     Text("\(percentage)%")
-                        .font(.title3)
+                        .font(.callout)
                         .fontWeight(.semibold)
                         .foregroundColor(currentTimer.hasExceededReference ? .appWarning : .appTextSecondary)
-                        .padding(.top, 4)
                 }
+            }
+            .frame(maxWidth: 240) // Constrain content to fit inside the circle
+        }
+    }
+    
+    /// Dynamic font size based on timer value (hours increase string length)
+    private var timerFontSize: CGFloat {
+        let hours = Int(currentTimer.currentElapsedTime) / 3600
+        if hours >= 10 {
+            return 38 // "HH:MM:SS.d" format
+        } else if hours >= 1 {
+            return 44 // "H:MM:SS.d" format  
+        }
+        return 52 // "MM:SS.d" format
+    }
+    
+    private var statusBadge: some View {
+        Group {
+            if currentTimer.isRunning {
+                HStack(spacing: 6) {
+                    Circle()
+                        .fill(Color.appSuccess)
+                        .frame(width: 8, height: 8)
+                        .glowEffect(color: .appSuccess, radius: 6)
+                    
+                    Text("RUNNING")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundColor(.appSuccess)
+                        .tracking(2)
+                }
+            } else if isActive {
+                Text("PAUSED")
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(.appWarning)
+                    .tracking(2)
+            } else {
+                Text("STOPPED")
+                    .font(.caption)
+                    .fontWeight(.bold)
+                    .foregroundColor(.appTextSecondary)
+                    .tracking(2)
             }
         }
     }

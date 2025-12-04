@@ -8,6 +8,7 @@ struct TimerItem: Identifiable, Codable, Equatable {
     var elapsedTime: TimeInterval // Elapsed time in seconds
     var isRunning: Bool
     var lastStartTime: Date? // When the timer was last started (for calculating elapsed while running)
+    var lastResetTime: Date? // When the timer was last explicitly reset (to prevent sync from overwriting)
     
     init(
         id: UUID = UUID(),
@@ -15,7 +16,8 @@ struct TimerItem: Identifiable, Codable, Equatable {
         referenceDuration: TimeInterval = 0,
         elapsedTime: TimeInterval = 0,
         isRunning: Bool = false,
-        lastStartTime: Date? = nil
+        lastStartTime: Date? = nil,
+        lastResetTime: Date? = nil
     ) {
         self.id = id
         self.name = name
@@ -23,6 +25,7 @@ struct TimerItem: Identifiable, Codable, Equatable {
         self.elapsedTime = elapsedTime
         self.isRunning = isRunning
         self.lastStartTime = lastStartTime
+        self.lastResetTime = lastResetTime
     }
     
     /// Calculate the current elapsed time including any running period
@@ -55,6 +58,23 @@ struct TimerItem: Identifiable, Codable, Equatable {
         
         if hours > 0 {
             return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+        }
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    
+    /// Compact format for reference duration - omit seconds if zero
+    var formattedReferenceDurationCompact: String {
+        let total = Int(referenceDuration)
+        let hours = total / 3600
+        let minutes = (total % 3600) / 60
+        let seconds = total % 60
+        
+        if hours > 0 && seconds == 0 {
+            return String(format: "%d:%02d:00", hours, minutes)
+        } else if hours > 0 {
+            return String(format: "%d:%02d:%02d", hours, minutes, seconds)
+        } else if seconds == 0 {
+            return String(format: "%02d:00", minutes)
         }
         return String(format: "%02d:%02d", minutes, seconds)
     }

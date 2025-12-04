@@ -145,6 +145,7 @@ class TimerManager: ObservableObject {
         timers[index].elapsedTime = 0
         timers[index].isRunning = false
         timers[index].lastStartTime = nil
+        timers[index].lastResetTime = Date() // Track reset time to prevent sync overwrite
         
         if activeTimerId == timer.id {
             activeTimerId = nil

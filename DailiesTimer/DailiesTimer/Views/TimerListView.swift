@@ -6,6 +6,7 @@ struct TimerListView: View {
     @State private var isRefreshing = false
     @State private var showingSyncAlert = false
     @State private var syncAlertMessage = ""
+    @State private var isEditMode = false
     
     var body: some View {
         ScrollView {
@@ -20,16 +21,25 @@ struct TimerListView: View {
                         .padding(.top, 60)
                 } else {
                     ForEach(timerManager.timers) { timer in
-                        TimerRowView(timer: timer)
-                            .transition(.asymmetric(
-                                insertion: .scale.combined(with: .opacity),
-                                removal: .scale.combined(with: .opacity)
-                            ))
+                        TimerRowView(
+                            timer: timer,
+                            isEditMode: isEditMode,
+                            onDelete: {
+                                withAnimation(.smoothSpring) {
+                                    timerManager.removeTimer(timer)
+                                }
+                            }
+                        )
+                        .transition(.asymmetric(
+                            insertion: .scale.combined(with: .opacity),
+                            removal: .scale.combined(with: .opacity)
+                        ))
                     }
                 }
             }
             .padding()
             .animation(.smoothSpring, value: timerManager.timers.count)
+            .animation(.smoothSpring, value: isEditMode)
         }
         .refreshable {
             await refreshData()
@@ -40,10 +50,50 @@ struct TimerListView: View {
                     .transition(.move(edge: .bottom).combined(with: .opacity))
             }
         }
+        .safeAreaInset(edge: .bottom) {
+            // Edit mode toggle button
+            if !timerManager.timers.isEmpty {
+                editModeButton
+            }
+        }
         .alert("Sync", isPresented: $showingSyncAlert) {
             Button("OK") {}
         } message: {
             Text(syncAlertMessage)
+        }
+    }
+    
+    private var editModeButton: some View {
+        HStack {
+            Spacer()
+            
+            Button {
+                withAnimation(.smoothSpring) {
+                    isEditMode.toggle()
+                }
+                HapticManager.shared.impact(.light)
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: isEditMode ? "checkmark" : "pencil")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                    
+                    Text(isEditMode ? "Done" : "Edit")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                }
+                .foregroundColor(isEditMode ? .appSuccess : .appText)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 10)
+                .background(
+                    Capsule()
+                        .fill(isEditMode ? Color.appSuccess.opacity(0.2) : Color.appSurface)
+                        .shadow(color: Color.black.opacity(0.2), radius: 8, y: 4)
+                )
+            }
+            .buttonStyle(ScaleButtonStyle())
+            .padding(.trailing, 20)
+            .padding(.bottom, 16)
         }
     }
     

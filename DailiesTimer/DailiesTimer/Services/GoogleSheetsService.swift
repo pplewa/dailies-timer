@@ -461,9 +461,10 @@ class GoogleSheetsService: ObservableObject {
         // Step 1: Fetch remote timers
         let remoteTimers = try await fetchTimersInternal()
         
-        // Step 2: Merge - take higher elapsed time values
+        // Step 2: Merge - take higher elapsed time values, but respect explicit resets
         var mergedTimers = localTimers
         var hasRemoteUpdates = false
+        let recentResetThreshold: TimeInterval = 10.0 // Ignore remote if reset within 10 seconds
         
         for remoteTimer in remoteTimers {
             if let localIndex = mergedTimers.firstIndex(where: { $0.id == remoteTimer.id }) {
@@ -471,7 +472,18 @@ class GoogleSheetsService: ObservableObject {
                 let localElapsed = mergedTimers[localIndex].currentElapsedTime
                 let remoteElapsed = remoteTimer.elapsedTime
                 
-                if remoteElapsed > localElapsed && !mergedTimers[localIndex].isRunning {
+                // Check if timer was recently reset - if so, local value takes precedence
+                let wasRecentlyReset: Bool
+                if let resetTime = mergedTimers[localIndex].lastResetTime {
+                    wasRecentlyReset = Date().timeIntervalSince(resetTime) < recentResetThreshold
+                } else {
+                    wasRecentlyReset = false
+                }
+                
+                if wasRecentlyReset {
+                    // Timer was recently reset - do not accept remote's higher value
+                    print("GoogleSheetsService: Timer '\(remoteTimer.name)' was recently reset, keeping local value: \(localElapsed)s")
+                } else if remoteElapsed > localElapsed && !mergedTimers[localIndex].isRunning {
                     // Remote has higher value and timer is not currently running
                     print("GoogleSheetsService: Updating '\(remoteTimer.name)' from remote: \(localElapsed)s -> \(remoteElapsed)s")
                     mergedTimers[localIndex].elapsedTime = remoteElapsed
